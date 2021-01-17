@@ -91,7 +91,8 @@ echo -e "$vr    COMANDO EXECUTADO COM SUCESSO... $end"
 echo -e "$vr======================================== $end"
 echo -e "${y}Retornando para o menu principal.
 ⌛Por favor aguarde ⌛${endc}"
-sleep 5
+sleep 4
+rm -rf install.sh
 
 }
 # Infinite Loop To Show Menu Untill Exit
