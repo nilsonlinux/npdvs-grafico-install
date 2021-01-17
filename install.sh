@@ -2,52 +2,114 @@
   #####################################################################################
   #### SUPORTE REGIONAL - SANTA INÊS - MA
   #### Nilsonlinux
-  export DIRETORIO="$(dirname "$(readlink -f "$0")")"
-  #####################################################################################
-  OPEN="play $DIRETORIO/sounds-alert/window-new.oga"
-  CLOSE="play $DIRETORIO/sounds-alert/window-close.oga"
-  ERRO="play $DIRETORIO/sounds-alert/erro.oga"
-  CONECTADO="play $DIRETORIO/sounds-alert/ok.oga" 
-  #####################################################################################
- ${OPEN} |
-########################################################
-(
-echo "# TESTANDO CONEXÃO COM INTERNET." ; sleep 1
-sleep 1
-) |
-zenity --progress \
-  --title="Teste de conexão." \
-  --text="Verificando conexão..." \
-  --pulsate=0 \
-   --width=500 --auto-close
-#######################################################
-if ! ping -c 1 8.8.8.8 >> /dev/null ; then
-${ERRO} | yad --form --title="Informação!" --height=1 --width=500 \
---center --image=$DIRETORIO/img/erro.svg \
---borders=10 --button="Sair:0"  \
---text="<span font_weight='bold' font='15' color='#1C1C1C'>ERRO! SEM CONEXÃO COM HOST.</span>
-<span font_weight='bold' font='20' color='#FF0000'>HOST - ${IPSERV}.${IP}</span>
-<span font_weight='bold' font='15' color='#1C1C1C'>Não está acessível . . .</span>"
-######################################################
-else
-${CONECTADO} | yad --form --title="Informação!" --height=30 --width=450 \
---center --image=$DIRETORIO/img/ok.svg \
---borders=10 --button="Continuar:0"  \
---text="<span font_weight='bold' font='10' color='#006400'>SUCESSO. VOCÊ ESTÁ CONECTADO.</span>
-<span font_weight='bold' font='10' color='#1C1C1C'>Clique no botão Continuar... </span>"
-################################################
-(
-# =================================================================
-echo "Iniciando processo de instalação de suas dependência" ; sleep 2
-gnome-terminal -x bash -c "sudo apt install rdesktop yad sox tigervnc-viewer sshpass git && git clone https://github.com/sistemanpdvs/.themes.git && git clone https://github.com/sistemanpdvs/npdvs-grafico.git && chmod +x ./npdvs-grafico/* && chmod +x ./npdvs-grafico/radio/* && cp npdvs-grafico/Nilsonlinux.desktop Área\ de\ Trabalho/ && ./npdvs-grafico/NPDVs-Grafico.sh ; bash" 
-# =================================================================
-echo "Instalando NPDVs-Gráfico, por favor aguarde..." ; sleep 2
-# =================================================================
-echo "Processo conclído com sucesso . . ."
-${CONECTADO}
-) | yad --text-info --window-icon "audio-x-generic.png" --title "EXECUTANDO INSTALAÇÃO . . .AGUARDE..." --center --height 120 --width 880 --tail --button="gtk-close"
-############ COMANDOS #################################
+version="3.3"
+spath="$( cd "$( dirname $0 )" && pwd )"
+a='\033[1;33m'       # Amarelo
+p='\033[0;35m'       # Purple
+v="\033[0;31m"       #vermelho
+vr="\033[01;32m"      #Verde
+br="\033[0;37m"      #Branco
+b='\033[1m'
+u='\033[4m'
+bl='\E[30m'
+r='\E[31m'
+g='\E[32m'
+y='\E[33m'
+bu='\E[34m'
+m='\E[35m'
+c='\E[36m'
+w='\E[37m'
+endc='\E[0m'
+end='\033[0m'
+#LVARIÁVEIS TERMINAIS LOJA =========
+logoNPDVs () {
+  clear
+  echo -e "${vr} 
+      NPDVS-GRÁFICO - INSTALADOR MODO TEXTO
+             ${r} NILSONLINUX © ${y}2021
+                  ${y}Versão :${end}${bu} ${version}${end}"
+    echo
+}
+# NPDVs
+# Exit CliPDVs
+NPDVsExit () {
+  logoNPDVs 
+  echo -e " Obrigado por utilizar o ${b}NPDVs${end}
+ Desenvolvido por: Nilsonlinux
+ ${b}Telegram -➤ ${bu}https://t.me/nilsonlinux${end}"
+  echo && sleep 1
+  exit
+}
+
+# APT Update
+#aptgupd () {
+#  echo && echo -e " ${y}Preparing To Perform APT Update${endc}"
+#  echo " It Is Recommended To Perform APT Update"
+#  echo " Before You Install Any Application."
+#  echo -en " ${y}Would You Like To Perform APT Update Now ? {y/n}${endc} "
+#  read option
+#  case $option in
+#    y) ;;
+#    n) echo " Skiping APT Update"; sleep 1; return 1 ;;
+#    *) echo " \"$option\" Is Not A Valid Option"; sleep 1; aptgupd ;;
+#  esac
+#  echo && echo -e " Performing ${b}APT Update${end}"
+#  apt -y update &>/dev/null
+#  echo -e " ${b}APT Update${end} Completed"
+#  echo && echo -en " ${y}Press Enter To Continue"
+#  read input
+#}
+# Internet Check
+checkinternet () {
+  if ping -c 1 google.com &>/dev/null; then
+    echo -e " Checando conexão com a internet: ${vr}CONECTADO ✅${endc}"
+    NPDVsCheck
+  else
+    echo -e " Checando conexão com a internet: ${r}DESCONECTADO ❌${endc}
+ ${y}Você precisa está conectado para a utilização do NPDVs${endc}"
+    echo -e " ${b}O Script está sendo${end} encerrado..."
+    echo && sleep 5
+    NPDVsExit
   fi
-      break
-#####################################################################################
-${CLOSE}
+}
+##################
+NPDVsStart () {
+  $spath/npdvs.sh
+  exit
+}
+# INICIALIZAÇÃO DO SCRIPT
+logoNPDVs && echo -e " ${y}Inicializando Instalador...${endc}" && checkinternet
+# -------------------------------------------------------
+instalar () {
+  logoNPDVs
+echo -e " ${r}Digite sua senha para prosseguir com a instalação.${end}"
+echo -e "$vr======================================== $end"
+sudo apt install rdesktop yad sox tigervnc-viewer sshpass git && git clone https://github.com/sistemanpdvs/.themes.git && git clone https://github.com/sistemanpdvs/npdvs-grafico.git && chmod +x ./npdvs-grafico/* && chmod +x ./npdvs-grafico/radio/* && cp npdvs-grafico/Nilsonlinux.desktop Área\ de\ Trabalho/ && ./npdvs-grafico/NPDVs-Grafico.sh
+echo -e "$vr=======[ $br Status da requisição $ec $vr]=======$end"
+echo -e "$vr======================================== $end"
+echo -e "$vr    COMANDO EXECUTADO COM SUCESSO... $end"
+echo -e "$vr======================================== $end"
+echo -e "${y}Retornando para o menu principal.
+⌛Por favor aguarde ⌛${endc}"
+sleep 5
+
+}
+# Infinite Loop To Show Menu Untill Exit
+while :
+do
+logoNPDVs
+echo -e "${g} ======= [ MENU PRINCIPAL (NPDVs-Gráfico)] ====== ${end}
+${g}[ ${y}1 ${end}${g}]${end} ${vr} INSTALAR${end}
+${g} ================================================ ${end}
+${g}[ ${y}0 ${end}${g}]${end} ${vr} SAIR${end}"
+echo -e "${g} ================================================ ${end}"
+echo -en " Selecione uma opção: ➤ "
+read option
+case $option in
+1) instalar ;;
+0) NPDVsExit ;;
+*) echo " \"$option\" Opção inválida"; sleep 1 ;;
+esac
+done
+# -------------------------------------------------------
+# Script End
