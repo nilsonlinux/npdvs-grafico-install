@@ -19,7 +19,7 @@
 <span font_weight='bold' size=\"xx-large\" color='#298A08'>                       $(date +%d/%m/%Y)</span>
 " \
 --columns=1 \
---field="   Instalar !$DIRETORIO/img/install1.svg!<span color='#298A08' font_weight='bold'>INSTALADOR NPDVS GRÁFICO - NILSONLINUX</span>":fbtn $DIRETORIO/menuinst/install.sh \
+--field="   Instalar !$DIRETORIO/img/install1.svg!<span color='#298A08' font_weight='bold'>INSTALADOR NPDVS GRÁFICO - NILSONLINUX</span>":fbtn $DIRETORIO/install.sh \
 --scroll "auto"
  ${CLOSE}
  
