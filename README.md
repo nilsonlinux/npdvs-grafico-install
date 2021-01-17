@@ -4,4 +4,4 @@
 # DEV: Nilsonlinux
 ![NPDVs-Grafico-Install-Text-Mode](https://github.com/sistemanpdvs/npdvs-grafico-install/blob/main/npdvs-grafico-install-text-mode.png)
 # Imagem Pós Instalação.
-![NPDVs-Grafico](https://github.com/sistemanpdvs/npdvs-grafico/blob/main/img/NPDVs-Grafico1.png)
+![NPDVs-Grafico-Install-Text-Mode](https://github.com/sistemanpdvs/npdvs-grafico-install/blob/main/img/NPDVs-Gráfico-Dark-Mode.png)
