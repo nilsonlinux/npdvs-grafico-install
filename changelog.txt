@@ -1,8 +1,9 @@
-* Adicionado novas filiais
-* Adicionado o acesso SSH
-* Adicionado a opção para a exclusão dos arquivos temporário na pasta /tmp
-para correção das transações executadas através do auxílio emergencial. 
+## Bem vindo histórico de atualizações NPDVs ##
+* Verificação de novas funcionalidades adicionadas. | 30/01/2021
+* Correção de pequenos bugs. | 30/01/2021
+* Saiba quando for lançado novas atualizações na inicialização do programa.
 * Receba notificação de atualização na inicialização do script.
+* Teste de conexão na inicialização.
 Ao iniciar o script, ele faz a verificação da versão. (NOVO)
 * Faça diversos processos com um só comando.
 * Adicionado a opção links úteis.
