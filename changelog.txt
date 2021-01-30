@@ -1,4 +1,4 @@
-## Bem vindo histórico de atualizações NPDVs ##
+ Bem vindo histórico de atualizações NPDVs
 * Verificação de novas funcionalidades adicionadas. | 30/01/2021
 * Correção de pequenos bugs. | 30/01/2021
 * Saiba quando for lançado novas atualizações na inicialização do programa.
