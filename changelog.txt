@@ -1,0 +1,12 @@
+* Adicionado novas filiais
+* Adicionado o acesso SSH
+* Adicionado a opção para a exclusão dos arquivos temporário na pasta /tmp
+para correção das transações executadas através do auxílio emergencial. 
+* Receba notificação de atualização na inicialização do script.
+Ao iniciar o script, ele faz a verificação da versão. (NOVO)
+* Faça diversos processos com um só comando.
+* Adicionado a opção links úteis.
+* Back-end super simplificado, para implementação de novos códigos.
+e outras melhorias menores
+
+By: Nilsonlinux
