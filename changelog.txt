@@ -1,6 +1,9 @@
  Bem vindo histórico de atualizações NPDVs
-* Verificação de novas funcionalidades adicionadas. | 30/01/2021
-* Correção de pequenos bugs. | 30/01/2021
+ ----------------------------------------------------------------
+                        📅 30/01/2021
+ ----------------------------------------------------------------
+* Verificação de novas funcionalidades adicionadas.
+* Correção de pequenos bugs.
 * Saiba quando for lançado novas atualizações na inicialização do programa.
 * Receba notificação de atualização na inicialização do script.
 * Teste de conexão na inicialização.
