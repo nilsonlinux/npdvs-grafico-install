@@ -2,6 +2,7 @@
   #####################################################################################
   #### SUPORTE REGIONAL - SANTA INÊS - MA
   #### Nilsonlinux
+  version="2.9"
   #####################################################################################
   export DIR="$(dirname "$(readlink -f "$0")")"
   GTK_THEME="Nilsonlinux-Neon-Originals-Gtk" $DIR/Nilsonlinux-check.sh
@@ -9,7 +10,7 @@
   WELCOME="play $DIR/sounds-alert/welcome.ogg"
   CLOSE="play $DIR/sounds-alert/window-close.oga"
   #####################################################################################
-  ${WELCOME} | GTK_THEME="Nilsonlinux-Neon-Originals-Gtk" yad --form --title="NPDVs 3.0" --height=460 --width=1050 \
+  ${WELCOME} | GTK_THEME="Nilsonlinux-Neon-Originals-Gtk" yad --form --title="NPDVs Gráfico $version" --height=460 --width=1050 \
 --center --image=$DIR/img/logo.png \
 --borders=5 --no-buttons \
 --text="
