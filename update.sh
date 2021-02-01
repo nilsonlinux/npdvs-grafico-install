@@ -25,7 +25,7 @@ end='\033[0m'
 logoNPDVs () {
   clear
   echo -e "${vr} 
-      NPDVS-GRÁFICO - INSTALADOR MODO TEXTO
+         NPDVS-GRÁFICO - ATUALIZADOR
              ${r} NILSONLINUX © ${y}2021
                   ${y}Versão :${end}${bu} ${version}${end}"
     echo
