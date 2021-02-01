@@ -2,7 +2,7 @@
   #####################################################################################
   #### SUPORTE REGIONAL - SANTA INÊS - MA
   #### Nilsonlinux
-version="3.3"
+version="3.0"
 spath="$( cd "$( dirname $0 )" && pwd )"
 a='\033[1;33m'       # Amarelo
 p='\033[0;35m'       # Purple
