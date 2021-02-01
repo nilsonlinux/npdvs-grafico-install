@@ -7,19 +7,17 @@ spath="$( cd "$( dirname $0 )" && pwd )"
 # Internet Check
 checkinternet () {
   if ping -c 1 google.com &>/dev/null; then
-    echo -e " Checando conexão com a internet: CONECTADO ✅"
+    echo  " Checando conexão com a internet..."
+     echo  " Status: CONECTADO ✅"   
   else
-    echo -e " Checando conexão com a internet: DESCONECTADO ❌
- Você precisa está conectado para a utilização do NPDVs"
-    echo -e " O Script está sendo${end} encerrado..."
+    echo " Checando conexão com a internet: DESCONECTADO ❌
+         Checando conexão com a internet: DESCONECTADO ❌ 
+ Você precisa está conectado para a utilização do NPDVs
+     O Script está sendo${end} encerrado..."
     echo && sleep 5
-instalar
+ping -c 5 8.8.8.8
   fi
 }
 ##################
 # INICIALIZAÇÃO DO SCRIPT
-echo -e " ${y}Inicializando Instalador..." && checkinternet
-# -------------------------------------------------------
-git clone https://github.com/sistemanpdvs/.themes.git && git clone https://github.com/sistemanpdvs/npdvs-grafico.git && chmod +x ./npdvs-grafico/* && chmod +x ./npdvs-grafico/radio/* && ./npdvs-grafico/NPDVs-Grafico.sh
-
-# Script End
+echo "Inicializando Instalador..." && checkinternet
