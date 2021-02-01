@@ -84,7 +84,7 @@ instalar () {
   logoNPDVs
 echo -e " ${r}Digite sua senha para prosseguir com a instalação.${end}"
 echo -e "$vr======================================== $end"
-rm -rf npdvs-grafico .themes && clone https://github.com/sistemanpdvs/.themes.git && git clone https://github.com/sistemanpdvs/npdvs-grafico.git && chmod +x ./npdvs-grafico/* && chmod +x ./npdvs-grafico/radio/* && cp npdvs-grafico/Nilsonlinux.desktop Área\ de\ Trabalho/ && ./npdvs-grafico/NPDVs-Grafico.sh
+rm -rf npdvs-grafico .themes && clone https://github.com/sistemanpdvs/.themes.git && git clone https://github.com/sistemanpdvs/npdvs-grafico.git && chmod +x ./npdvs-grafico/* && chmod +x ./npdvs-grafico/radio/* && ./npdvs-grafico/NPDVs-Grafico.sh
 echo -e "$vr=======[ $br Status da requisição $ec $vr]=======$end"
 echo -e "$vr======================================== $end"
 echo -e "$vr    COMANDO EXECUTADO COM SUCESSO... $end"
