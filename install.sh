@@ -2,7 +2,7 @@
   #####################################################################################
   #### SUPORTE REGIONAL - SANTA INÊS - MA
   #### Nilsonlinux
-version="3.3"
+version="3.1"
 spath="$( cd "$( dirname $0 )" && pwd )"
 a='\033[1;33m'       # Amarelo
 p='\033[0;35m'       # Purple
@@ -34,8 +34,8 @@ logoNPDVs () {
 # Exit CliPDVs
 NPDVsExit () {
   logoNPDVs 
-  echo -e " Obrigado por utilizar o ${b}NPDVs${end}
- Desenvolvido por: Nilsonlinux
+  echo -e " Você encerrou o instalador. Saindo... ${b}NPDVs${end}
+ Desenvolvido por: Nilsonlinux.
  ${b}Telegram -➤ ${bu}https://t.me/nilsonlinux${end}"
   echo && sleep 1
   exit
@@ -74,7 +74,7 @@ checkinternet () {
 }
 ##################
 NPDVsStart () {
-  $spath/npdvs.sh
+  $spath/install.sh
   exit
 }
 # INICIALIZAÇÃO DO SCRIPT
@@ -89,11 +89,9 @@ echo -e "$vr=======[ $br Status da requisição $ec $vr]=======$end"
 echo -e "$vr======================================== $end"
 echo -e "$vr    COMANDO EXECUTADO COM SUCESSO... $end"
 echo -e "$vr======================================== $end"
-echo -e "${y}Retornando para o menu principal.
-⌛Por favor aguarde ⌛${endc}"
 sleep 4
 rm -rf install.sh
-
+exit
 }
 # Infinite Loop To Show Menu Untill Exit
 while :
